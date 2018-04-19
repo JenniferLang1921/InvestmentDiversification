@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>BCT Sunburst Chart 01</title>
+  <link href="https://playground.anychart.com/s5pz8RqX/iframe" rel="canonical">
+  <meta content="AnyChart - JavaScript Charts designed to be embedded and integrated" name="description">
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+  <link href="css/anychart-ui.min.css" rel="stylesheet" type="text/css">
+  <style>html, body, #container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}</style>
+ </head>
+ <body>
+  <div id="container"></div>
+  <script src="js/anychart-base.min.js"></script>
+  <script src="js/anychart-sunburst.min.js"></script>
+  <script src="js/anychart-exports.min.js"></script>
+  <script src="js/anychart-ui.min.js"></script>
+  <script type="text/javascript">anychart.onDocumentReady(function () {
+var blue1 = "#191970";
+var blue2 = "#0000CD";
+var blue3 = "#4169E1";
+var blue4 = "#1E90FF";
+  
+  
+   var red1 = "#8B0000";
+  var red2 = "#B22222";
+  var red3 = "#DC143C";
+  
+   var green1 = "#006400";
+    var green2 = "#228B22";
+     var green3 = "#32CD32";
+     
+     var purple1 = "#800080";
+     var purple2 = "#9400D3";
+  
+  
+
+  
+    // create data
+    var data = [
+      
+        {name: "Energy Stocks", fill: blue1},
+       {name: "Healthcare Stocks", fill: blue2},
+        {name: "Utility Stocks", fill: blue3},
+        {name: "Consumer Staples", fill: blue4},
+        {name: "Small Cap Stock Funds", fill: red1},
+        {name: "Large Cap Stock Funds", fill: red2},
+        {name: "Mid-Cap Stock Funds", fill: red3},
+        {name: "Municipal Bonds", fill: green1},
+        {name: "Federal Bonds", fill: green2},
+        {name: "Corporate Bonds", fill: green3},
+        {name: "Certificate of Deposit", fill: purple1},
+        {name: "Money Market", fill: purple2}
+    ];
+
+    // create a chart and set the data
+    var chart = anychart.sunburst(data, "as-tree");
+
+    // set the chart title
+    chart.title().useHtml(true);
+    chart.title(
+"<span style='font-size:36; color: white; font-style:bold'>" +
+                "Sample Diversification</span>");
+
+    // set the container id
+    chart.container("container");
+  
+   // set chart labels settings
+       
+
+        // set settings for leaves labels
+        chart.leaves().labels()
+            .maxFontSize(32)
+            .textOverflow('...');
+  
+  
+  chart.background().fill({
+  keys: ["#282828","#484848", "#282828"],
+  angle: 45,
+});
+  
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+ </body>
+</html>
